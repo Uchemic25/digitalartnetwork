@@ -1,4 +1,7 @@
+import 'package:digitalart/res/color_resource.dart';
 import 'package:flutter/material.dart';
+
+import 'home_body.dart';
 
 class ProfilePage extends StatelessWidget {
   final profileimages = [
@@ -38,10 +41,11 @@ class ProfilePage extends StatelessWidget {
       child: CustomScrollView(
         slivers: <Widget>[
           SliverAppBar(
-            expandedHeight: 275,
+            expandedHeight: 290,
+            backgroundColor: ColorResource.selectedTextColor,
             floating: false,
             pinned: true,
-            title: const Text('Profile'),
+            title: const Text('Details page'),
             flexibleSpace: FlexibleSpaceBar(
               background: Stack(
                 children: <Widget>[
@@ -52,26 +56,6 @@ class ProfilePage extends StatelessWidget {
                       image: DecorationImage(
                           fit: BoxFit.fitWidth,
                           image: AssetImage('assets/images/image2.jpeg')),
-                    ),
-                  ),
-                  Positioned(
-                    right: 0,
-                    top: 190,
-                    child: Container(
-                      width: 80.0,
-                      height: 20.0,
-                      decoration: BoxDecoration(
-                        color: Colors.transparent,
-                        border: Border.all(color: Colors.grey, width: 2.0),
-                        borderRadius: BorderRadius.circular(10.0),
-                      ),
-                      child: const Center(
-                        child: Text(
-                          'Edit Profile',
-                          style: TextStyle(
-                              color: Colors.grey, fontWeight: FontWeight.bold),
-                        ),
-                      ),
                     ),
                   ),
                   Column(
@@ -112,7 +96,7 @@ class ProfilePage extends StatelessWidget {
                       const Padding(
                         padding: EdgeInsets.only(left: 8.0),
                         child: Text(
-                          'carol Danvers',
+                          'Micheal Mick',
                           style: TextStyle(
                               color: Colors.white,
                               fontWeight: FontWeight.bold,
@@ -136,208 +120,6 @@ class ProfilePage extends StatelessWidget {
               centerTitle: true,
             ),
           ),
-          SliverList(
-            delegate: SliverChildBuilderDelegate(
-              (context, index) => Column(
-                children: <Widget>[
-                  Row(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    mainAxisAlignment: MainAxisAlignment.start,
-                    children: <Widget>[
-                      Padding(
-                        padding: const EdgeInsets.all(8.0),
-                        child: Container(
-                          width: 40.0,
-                          height: 40.0,
-                          decoration: const BoxDecoration(
-                            shape: BoxShape.circle,
-                            image: DecorationImage(
-                              fit: BoxFit.fitHeight,
-                              image: AssetImage('assets/images/face1.jpeg'),
-                            ),
-                          ),
-                        ),
-                      ),
-                      Expanded(
-                        child: Padding(
-                          padding: const EdgeInsets.fromLTRB(8, 0, 8, 0),
-                          child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            mainAxisAlignment: MainAxisAlignment.start,
-                            children: <Widget>[
-                              Row(
-                                mainAxisAlignment:
-                                    MainAxisAlignment.spaceBetween,
-                                children: <Widget>[
-                                  Row(
-                                    children: <Widget>[
-                                      Text(
-                                        names[index],
-                                        style: const TextStyle(
-                                            color: Colors.white,
-                                            fontWeight: FontWeight.bold),
-                                      ),
-                                      Padding(
-                                        padding:
-                                            const EdgeInsets.only(left: 8.0),
-                                        child: Text(
-                                          usernames[index],
-                                          style: const TextStyle(
-                                            color: Colors.grey,
-                                          ),
-                                        ),
-                                      ),
-                                    ],
-                                  ),
-                                  const Icon(
-                                    Icons.arrow_drop_down,
-                                    color: Colors.grey,
-                                  )
-                                ],
-                              ),
-                              Padding(
-                                padding: const EdgeInsets.only(
-                                    top: 0.0, bottom: 8.0),
-                                child: Text(
-                                  tweets[index],
-                                  style: const TextStyle(
-                                    color: Colors.white,
-                                  ),
-                                ),
-                              ),
-                              Container(
-                                child: images[index] == null
-                                    ? null
-                                    : SizedBox(
-                                        width: double.infinity,
-                                        child: ClipRRect(
-                                            borderRadius:
-                                                BorderRadius.circular(8.0),
-                                            child: Image.asset(images[index]!)),
-                                      ),
-                              ),
-                              Padding(
-                                padding: const EdgeInsets.fromLTRB(8, 8, 16, 8),
-                                child: Row(
-                                  mainAxisAlignment:
-                                      MainAxisAlignment.spaceBetween,
-                                  children: <Widget>[
-                                    Row(
-                                      mainAxisAlignment:
-                                          MainAxisAlignment.start,
-                                      children: <Widget>[
-                                        SizedBox(
-                                          height: 10.0,
-                                          width: 18.0,
-                                          child: IconButton(
-                                            padding: const EdgeInsets.all(0.0),
-                                            icon: const Icon(
-                                              Icons.chat_bubble_outline,
-                                              size: 18.0,
-                                              color: Colors.grey,
-                                            ),
-                                            onPressed: () {},
-                                          ),
-                                        ),
-                                        SizedBox(
-                                            height: 10.0,
-                                            width: 18.0,
-                                            child: Text(
-                                              replies[index],
-                                              style: const TextStyle(
-                                                  color: Colors.grey),
-                                            )),
-                                      ],
-                                    ),
-                                    Row(
-                                      mainAxisAlignment:
-                                          MainAxisAlignment.start,
-                                      children: <Widget>[
-                                        SizedBox(
-                                          height: 10.0,
-                                          width: 18.0,
-                                          child: IconButton(
-                                            padding: const EdgeInsets.all(0.0),
-                                            icon: const Icon(
-                                              Icons.replay,
-                                              size: 18.0,
-                                              color: Colors.grey,
-                                            ),
-                                            onPressed: () {},
-                                          ),
-                                        ),
-                                        SizedBox(
-                                            height: 10.0,
-                                            width: 18.0,
-                                            child: Text(
-                                              retweets[index],
-                                              style: const TextStyle(
-                                                  color: Colors.grey),
-                                            )),
-                                      ],
-                                    ),
-                                    Row(
-                                      mainAxisAlignment:
-                                          MainAxisAlignment.start,
-                                      children: <Widget>[
-                                        SizedBox(
-                                          height: 10.0,
-                                          width: 18.0,
-                                          child: IconButton(
-                                            padding: const EdgeInsets.all(0.0),
-                                            icon: const Icon(
-                                              Icons.favorite_border,
-                                              size: 18.0,
-                                              color: Colors.grey,
-                                            ),
-                                            onPressed: () {},
-                                          ),
-                                        ),
-                                        SizedBox(
-                                            height: 10.0,
-                                            width: 18.0,
-                                            child: Text(
-                                              likes[index],
-                                              style: const TextStyle(
-                                                  color: Colors.grey),
-                                            )),
-                                      ],
-                                    ),
-                                    SizedBox(
-                                      height: 10.0,
-                                      width: 10.0,
-                                      child: IconButton(
-                                        padding: const EdgeInsets.all(0.0),
-                                        icon: const Icon(
-                                          Icons.share,
-                                          size: 18.0,
-                                          color: Colors.grey,
-                                        ),
-                                        onPressed: () {},
-                                      ),
-                                    ),
-                                  ],
-                                ),
-                              ),
-                            ],
-                          ),
-                        ),
-                      )
-                    ],
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.only(top: 8),
-                    child: Container(
-                      width: double.infinity,
-                      color: Colors.grey,
-                      height: 0.5,
-                    ),
-                  )
-                ],
-              ),
-              childCount: names.length,
-            ),
-          )
         ],
       ),
     ));

@@ -57,7 +57,7 @@ class _LandingPageState extends State<LandingPage> {
       ),
       body: _widgetOptions.elementAt(_selectedIndex),
       bottomNavigationBar: BottomNavigationBar(
-        backgroundColor: Colors.white,
+        backgroundColor: ColorResource.primaryColor,
         type: BottomNavigationBarType.fixed,
         items: const <BottomNavigationBarItem>[
           BottomNavigationBarItem(
@@ -91,6 +91,7 @@ class _LandingPageState extends State<LandingPage> {
         unselectedIconTheme:
             IconThemeData(color: ColorResource.unSelectedTextColor),
         selectedItemColor: ColorResource.selectedTextColor,
+        unselectedItemColor: ColorResource.unSelectedTextColor,
         onTap: _onItemTapped,
       ),
       drawer: Drawer(
@@ -157,65 +158,65 @@ class _LandingPageState extends State<LandingPage> {
                   child: Container(
                     padding: const EdgeInsets.only(top: 8.0, bottom: 8.0),
                     child: Column(
-                      children: const [
+                      children: [
                         ListTile(
                           title: Text(
                             'Challenge',
-                            style: TextStyle(color: Colors.white),
+                            style:
+                                TextStyle(color: ColorResource.textIconColor),
                           ),
                           leading: Icon(
                             Icons.bar_chart,
-                            color: Colors.grey,
+                            color: ColorResource.textIconColor,
                           ),
                         ),
                         ListTile(
                           title: Text(
                             'Orders/Downloads',
-                            style: TextStyle(color: Colors.white),
+                            style:
+                                TextStyle(color: ColorResource.textIconColor),
                           ),
                           leading: Icon(
                             Icons.download,
-                            color: Colors.grey,
+                            color: ColorResource.textIconColor,
                           ),
                         ),
                         ListTile(
                           title: Text(
                             'Vendor Profile',
-                            style: TextStyle(color: Colors.white),
+                            style:
+                                TextStyle(color: ColorResource.textIconColor),
                           ),
                           leading: Icon(
                             Icons.person_pin,
-                            color: Colors.grey,
+                            color: ColorResource.textIconColor,
                           ),
                         ),
                         ListTile(
                           title: Text(
                             'Settings',
-                            style: TextStyle(color: Colors.white),
+                            style:
+                                TextStyle(color: ColorResource.textIconColor),
                           ),
                           leading: Icon(
                             Icons.settings,
-                            color: Colors.grey,
+                            color: ColorResource.textIconColor,
                           ),
                         ),
                         ListTile(
                           title: Text(
                             'Logout',
-                            style: TextStyle(color: Colors.white),
+                            style:
+                                TextStyle(color: ColorResource.textIconColor),
                           ),
                           leading: Icon(
                             Icons.logout,
-                            color: Colors.grey,
+                            color: ColorResource.textIconColor,
                           ),
                         ),
                       ],
                     ),
                   ),
-                ),
-                Container(
-                  width: double.infinity,
-                  color: Colors.grey,
-                  height: 0.5,
                 ),
               ],
             )),

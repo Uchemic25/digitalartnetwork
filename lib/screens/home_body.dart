@@ -7,17 +7,39 @@ class HomeBody extends StatelessWidget {
     'assets/images/face1.jpeg',
     'assets/images/face2.jpeg',
     'assets/images/face3.jpeg',
-    'assets/images/face4.jpeg',
+    'assets/images/image1.jpeg',
+    'assets/images/image2.jpeg',
+    'assets/images/face1.jpeg',
     'assets/images/face5.jpeg',
     'assets/images/face5.jpeg',
   ];
-  final names = ['musk', 'mic', 'uche', 'ada', 'remond', 'nelly'];
-  final usernames = ['@musk', '@mic', '@uche', '@ada', '@remond', '@nelly'];
+  final names = [
+    'musk',
+    'mic',
+    'uche',
+    'ada',
+    'remond',
+    'nelly',
+    'remond',
+    'nelly'
+  ];
+  final usernames = [
+    '@musk',
+    '@mic',
+    '@uche',
+    '@ada',
+    '@remond',
+    '@nelly',
+    '@remond',
+    '@nelly'
+  ];
   final images = [
     null,
-    'assets/images/image1.jpeg',
+    'assets/images/face2.jpeg',
+    'assets/images/face3.jpeg',
     null,
-    'assets/images/face4.jpeg',
+    null,
+    'assets/images/face1.jpeg',
     null,
     'assets/images/image2.jpeg',
   ];
@@ -28,13 +50,43 @@ class HomeBody extends StatelessWidget {
     'Wherever life plants you, bloom with grace',
     'So, what if, instead of thinking about solving your whole life, you just think about adding additional good things. One at a time. Just let your pile of good things grow',
     'Little by little, day by day, what is mean for you Will find its way',
+    'Little by little, day by day, what is mean for you Will find its way',
+    'Little by little, day by day, what is mean for you Will find its way',
   ];
-  final replies = ['1', '15', '10', '19', '69', '3'];
-  final retweets = ['10', '1k', '1', '9', '6', '30'];
-  final likes = ['50', '10', '70', '2', '5', '10'];
+  final replies = [
+    '1',
+    '15',
+    '10',
+    '19',
+    '69',
+    '3',
+    '19',
+    '69',
+  ];
+  final retweets = [
+    '10',
+    '1k',
+    '1',
+    '9',
+    '6',
+    '30',
+    '19',
+    '69',
+  ];
+  final likes = [
+    '50',
+    '10',
+    '70',
+    '2',
+    '5',
+    '10',
+    '19',
+    '69',
+  ];
   Widget getList() {
     return ListView.builder(
-      itemCount: 6,
+      itemCount: 8,
+      padding: const EdgeInsets.symmetric(vertical: 20),
       itemBuilder: (context, index) => Column(
         children: <Widget>[
           Row(
@@ -42,7 +94,7 @@ class HomeBody extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.start,
             children: <Widget>[
               Padding(
-                padding: const EdgeInsets.all(8.0),
+                padding: const EdgeInsets.only(top: 10.0),
                 child: Container(
                   width: 40.0,
                   height: 40.0,
@@ -57,7 +109,7 @@ class HomeBody extends StatelessWidget {
               ),
               Expanded(
                 child: Padding(
-                  padding: const EdgeInsets.fromLTRB(8, 0, 8, 0),
+                  padding: const EdgeInsets.fromLTRB(8, 15, 8, 20),
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     mainAxisAlignment: MainAxisAlignment.start,
@@ -91,7 +143,7 @@ class HomeBody extends StatelessWidget {
                         ],
                       ),
                       Padding(
-                        padding: const EdgeInsets.only(top: 0.0, bottom: 8.0),
+                        padding: const EdgeInsets.only(top: 0.0, bottom: 12.0),
                         child: Text(
                           tweets[index],
                           style: const TextStyle(
@@ -110,7 +162,7 @@ class HomeBody extends StatelessWidget {
                               ),
                       ),
                       Padding(
-                        padding: const EdgeInsets.fromLTRB(8, 8, 16, 8),
+                        padding: const EdgeInsets.fromLTRB(12, 16, 16, 12),
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: <Widget>[
@@ -118,8 +170,8 @@ class HomeBody extends StatelessWidget {
                               mainAxisAlignment: MainAxisAlignment.start,
                               children: <Widget>[
                                 SizedBox(
-                                  height: 10.0,
-                                  width: 18.0,
+                                  height: 20.0,
+                                  width: 20.0,
                                   child: IconButton(
                                     padding: const EdgeInsets.all(0.0),
                                     icon: const Icon(
@@ -131,8 +183,8 @@ class HomeBody extends StatelessWidget {
                                   ),
                                 ),
                                 SizedBox(
-                                    height: 10.0,
-                                    width: 18.0,
+                                    height: 20.0,
+                                    width: 20.0,
                                     child: Text(
                                       replies[index],
                                       style:
@@ -144,8 +196,8 @@ class HomeBody extends StatelessWidget {
                               mainAxisAlignment: MainAxisAlignment.start,
                               children: <Widget>[
                                 SizedBox(
-                                  height: 10.0,
-                                  width: 18.0,
+                                  height: 20.0,
+                                  width: 20.0,
                                   child: IconButton(
                                     padding: const EdgeInsets.all(0.0),
                                     icon: const Icon(
@@ -157,8 +209,8 @@ class HomeBody extends StatelessWidget {
                                   ),
                                 ),
                                 SizedBox(
-                                    height: 10.0,
-                                    width: 18.0,
+                                    height: 20.0,
+                                    width: 20.0,
                                     child: Text(
                                       retweets[index],
                                       style:
@@ -170,8 +222,8 @@ class HomeBody extends StatelessWidget {
                               mainAxisAlignment: MainAxisAlignment.start,
                               children: <Widget>[
                                 SizedBox(
-                                  height: 10.0,
-                                  width: 18.0,
+                                  height: 20.0,
+                                  width: 20.0,
                                   child: IconButton(
                                     padding: const EdgeInsets.all(0.0),
                                     icon: const Icon(
@@ -183,8 +235,8 @@ class HomeBody extends StatelessWidget {
                                   ),
                                 ),
                                 SizedBox(
-                                    height: 10.0,
-                                    width: 18.0,
+                                    height: 20.0,
+                                    width: 20.0,
                                     child: Text(
                                       likes[index],
                                       style:
@@ -193,8 +245,8 @@ class HomeBody extends StatelessWidget {
                               ],
                             ),
                             SizedBox(
-                              height: 10.0,
-                              width: 10.0,
+                              height: 20.0,
+                              width: 20.0,
                               child: IconButton(
                                 padding: const EdgeInsets.all(0.0),
                                 icon: const Icon(
