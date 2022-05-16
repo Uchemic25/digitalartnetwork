@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../res/color_resource.dart';
+import '../../res/color_resource.dart';
 import 'home.dart';
 import 'details_page.dart';
 

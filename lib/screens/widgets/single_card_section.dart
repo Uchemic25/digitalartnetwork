@@ -1,3 +1,4 @@
+import 'package:digitalart/screens/pages/comment_page.dart';
 import 'package:flutter/material.dart';
 
 import '../../res/color_resource.dart';
@@ -122,7 +123,13 @@ class SingleCardSection extends StatelessWidget {
                                     size: 18.0,
                                     color: ColorResource.textIconColor,
                                   ),
-                                  onPressed: () {},
+                                  onPressed: () {
+                                    Navigator.push(
+                                        context,
+                                        MaterialPageRoute(
+                                            builder: (context) =>
+                                                const CommentPage()));
+                                  },
                                 ),
                               ),
                               SizedBox(

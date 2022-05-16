@@ -1,8 +1,7 @@
 import 'package:digitalart/res/color_resource.dart';
 import 'package:flutter/material.dart';
 
-import 'screens/home.dart';
-import 'screens/landing_page.dart';
+import 'screens/pages/landing_page.dart';
 
 void main() => runApp(MyApp());
 

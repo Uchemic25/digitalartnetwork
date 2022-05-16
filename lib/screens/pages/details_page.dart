@@ -1,8 +1,8 @@
 import 'package:digitalart/res/color_resource.dart';
 import 'package:flutter/material.dart';
 
-import '../core/models/user_model.dart';
-import 'widgets/single_card_section.dart';
+import '../../core/models/user_model.dart';
+import '../widgets/single_card_section.dart';
 
 class ProfilePage extends StatelessWidget {
   final List<UsersModel> usersData = usersList;
@@ -19,7 +19,7 @@ class ProfilePage extends StatelessWidget {
               floating: false,
               pinned: true,
               backgroundColor: ColorResource.primaryColor,
-              title: const Text('Art Network'),
+              title: const Text('Digital Art Network'),
               flexibleSpace: FlexibleSpaceBar(
                 background: Stack(
                   children: <Widget>[

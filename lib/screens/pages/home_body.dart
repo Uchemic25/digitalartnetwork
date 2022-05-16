@@ -1,8 +1,8 @@
+import 'package:digitalart/screens/widgets/single_card_section.dart';
 import 'package:flutter/material.dart';
 
-import '../core/models/user_model.dart';
-import '../res/color_resource.dart';
-import 'widgets/single_card_section.dart';
+import '../../core/models/user_model.dart';
+import '../../res/color_resource.dart';
 
 class HomeBody extends StatelessWidget {
   final List<UsersModel> usersData = usersList;
