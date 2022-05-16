@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 import '../res/color_resource.dart';
 import 'home.dart';
-import 'profile.dart';
+import 'details_page.dart';
 
 class LandingPage extends StatefulWidget {
   const LandingPage({Key? key}) : super(key: key);

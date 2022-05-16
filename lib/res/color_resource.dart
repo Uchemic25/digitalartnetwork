@@ -11,4 +11,11 @@ class ColorResource {
   static Color selectedTextColor = const Color(0xffb02a84);
 
   static Color unSelectedTextColor = const Color(0xff2233ee);
+
+  static final primaryGradient = LinearGradient(
+    colors: [gradient1Color, gradient2Color],
+    begin: Alignment.topCenter,
+    end: Alignment.bottomCenter,
+    tileMode: TileMode.clamp,
+  );
 }
