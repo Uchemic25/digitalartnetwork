@@ -5,6 +5,8 @@ import 'screens/pages/landing_page.dart';
 
 void main() => runApp(MyApp());
 
+// will confirm github link;
+
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
