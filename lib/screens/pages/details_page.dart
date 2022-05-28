@@ -18,7 +18,7 @@ class ProfilePage extends StatelessWidget {
               expandedHeight: 290,
               floating: false,
               pinned: true,
-              backgroundColor: ColorResource.primaryColor,
+              backgroundColor: ColorResource.backgroundColor,
               title: const Text('Digital Art Network'),
               flexibleSpace: FlexibleSpaceBar(
                 background: Stack(

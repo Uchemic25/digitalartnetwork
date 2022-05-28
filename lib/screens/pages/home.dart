@@ -7,7 +7,7 @@ class DigitalHomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: ColorResource.primaryColor,
+      backgroundColor: ColorResource.backgroundColor,
       body: HomeBody(),
       floatingActionButton: FloatingActionButton(
         onPressed: () {},

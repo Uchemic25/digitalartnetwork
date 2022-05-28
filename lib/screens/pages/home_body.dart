@@ -28,7 +28,7 @@ class HomeBody extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      color: ColorResource.cardColor,
+      color: ColorResource.cardColor1,
       child: getList(),
     );
   }

@@ -42,12 +42,12 @@ class CommentPage extends StatelessWidget {
             ),
           ),
         ],
-        backgroundColor: ColorResource.primaryColor,
+        backgroundColor: ColorResource.backgroundColor,
         title: const Text(
           '',
         ),
       ),
-      backgroundColor: ColorResource.primaryColor,
+      backgroundColor: ColorResource.backgroundColor,
       body: ListView(
         shrinkWrap: true,
         children: [
