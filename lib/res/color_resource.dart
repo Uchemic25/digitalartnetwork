@@ -26,5 +26,7 @@ class ColorResource {
   static Color inputSelectedColor = const Color(0xff1a1a1a);
   static Color iconColor = const Color(0xff8c8c8c);
   static Color customBlue = const Color(0xff0085ff);
-  static Color btnTxtColor = const Color(0xfff4f4f4);
+  // static Color btnTxtColor = const Color(0xfff4f4f4);
+
+  static Color btnTxtColor = Colors.white70;
 }

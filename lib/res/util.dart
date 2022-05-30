@@ -71,7 +71,7 @@ class Util {
         borderRadius: BorderRadius.only(
             bottomLeft: Radius.circular(Dimension.borderRadius),
             bottomRight: Radius.circular(Dimension.borderRadius)),
-        color: ColorResource.inputBackground,
+        // color: ColorResource.inputBackground,
       ),
       child: ElevatedButton(
           onPressed: function!,

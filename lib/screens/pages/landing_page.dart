@@ -8,6 +8,8 @@ import 'details_page.dart';
 class LandingPage extends StatefulWidget {
   const LandingPage({Key? key}) : super(key: key);
 
+  static String name = "/landing-page";
+
   @override
   State<LandingPage> createState() => _LandingPageState();
 }

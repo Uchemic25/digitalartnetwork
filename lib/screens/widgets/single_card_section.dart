@@ -115,7 +115,7 @@ class SingleCardSection extends StatelessWidget {
                                       width: double.infinity,
                                       child: ClipRRect(
                                           borderRadius:
-                                              BorderRadius.circular(8.0),
+                                              BorderRadius.circular(.0),
                                           child: Image.asset(postimages)),
                                     ),
                         ),
