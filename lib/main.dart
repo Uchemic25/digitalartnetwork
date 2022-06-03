@@ -15,11 +15,13 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Digital Art Network',
       theme: ThemeData(
-          primaryColor: ColorResource.backgroundColor,
-          primaryColorDark: ColorResource.backgroundColor,
-          iconTheme: IconThemeData(color: ColorResource.unSelectedTextColor),
-          colorScheme: ColorScheme.fromSwatch()
-              .copyWith(secondary: ColorResource.selectedTextColor)),
+        primaryColor: ColorResource.backgroundColor,
+        primaryColorDark: ColorResource.backgroundColor,
+        iconTheme: IconThemeData(color: ColorResource.unSelectedTextColor),
+        colorScheme: ColorScheme.fromSwatch()
+            .copyWith(secondary: ColorResource.selectedTextColor),
+        fontFamily: "Montserrat",
+      ),
       initialRoute: SignIn.name,
       getPages: pages,
     );

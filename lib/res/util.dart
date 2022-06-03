@@ -1,4 +1,5 @@
 import 'package:digitalart/res/dimension.dart';
+import 'package:digitalart/screens/widgets/textview.dart';
 import 'package:flutter/material.dart';
 
 import 'color_resource.dart';
@@ -75,10 +76,11 @@ class Util {
       ),
       child: ElevatedButton(
           onPressed: function!,
-          child: Text(text!,
+          child: Text(text!.toUpperCase(),
               style: TextStyle(
-                  fontSize: Dimension.fontSizeBig,
-                  color: ColorResource.btnTxtColor)),
+                fontSize: Dimension.fontSizeBig,
+                color: Colors.white,
+              )),
           style: ButtonStyle(
               padding: MaterialStateProperty.all(
                   EdgeInsets.all(Dimension.paddingSize)),
@@ -133,6 +135,74 @@ class Util {
                       )))
             ],
           )),
+    );
+  }
+
+  static Widget registrationInputField({
+    String? hint = "Write a comment",
+    IconData? icon,
+    bool isIcon = false,
+    double? size,
+    double fontSize = 16,
+    TextEditingController? controller,
+    TextInputType inputType = TextInputType.text,
+    Color color = Colors.grey,
+    bool isPassword = false,
+    bool buttonAvailable = false,
+    int field = 0,
+    int selectedField = 20,
+    Function()? onPressed,
+  }) {
+    return Stack(
+      children: [
+        Container(
+          margin: EdgeInsets.only(left: 5),
+          child: TextView(
+            text: hint! + ":",
+            txtColor: Colors.white,
+          ),
+        ),
+        InkWell(
+          onTap: onPressed,
+          child: Container(
+            padding: EdgeInsets.all(Dimension.borderRadius),
+            margin: EdgeInsets.only(
+                top: Dimension.regMargin, bottom: Dimension.marginSize),
+            decoration: BoxDecoration(
+              border: Border.all(
+                  width: 1,
+                  color: field == selectedField
+                      ? ColorResource.selectedTextColor
+                      : Colors.grey),
+              borderRadius: BorderRadius.circular(Dimension.borderRadius),
+              color: ColorResource.inputColor,
+            ),
+            child: InkWell(
+              onTap: onPressed,
+              child: Row(
+                children: [
+                  Expanded(
+                    child: TextField(
+                      minLines: 1,
+                      maxLines: 6,
+                      obscureText: isPassword,
+                      controller: controller,
+                      keyboardType: inputType,
+                      style:
+                          TextStyle(fontSize: fontSize, color: Colors.white70),
+                      decoration: const InputDecoration.collapsed(
+                        hintText: "",
+                        hintStyle: TextStyle(color: Colors.white70),
+                        border: InputBorder.none,
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+            ),
+          ),
+        ),
+      ],
     );
   }
 }
