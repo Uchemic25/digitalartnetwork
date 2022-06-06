@@ -5,9 +5,13 @@ class ColorResource {
 
   static Color secondaryColor = const Color(0xff1b1f28);
   static Color textIconColor = const Color(0xffb4bae3);
-  static Color cardColor = const Color(0xff181818);
+  static Color cardColor = const Color(0xff191919);
   static Color gradient1Color = const Color(0xff131a22);
   static Color gradient2Color = const Color(0xff304250);
+  static Color scaffoldBackground = const Color(0xff1b1f28);
+  static Color colorDark = const Color(0xff101116);
+  static const Color lightPrimary = Color(0xffffffff);
+  static const Color grey = Color(0xFFE7E7E7);
 
   static Color selectedTextColor = const Color(0xffb02a84);
 

@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import '../../res/color_resource.dart';
 import 'home.dart';
 import 'details_page.dart';
+import 'profile/profile_page.dart';
 
 class LandingPage extends StatefulWidget {
   const LandingPage({Key? key}) : super(key: key);
@@ -24,7 +25,7 @@ class _LandingPageState extends State<LandingPage> {
     Container(),
     Container(),
     Container(),
-    Container(),
+    const UserProfilePage(),
   ];
 
   void _onItemTapped(int index) {
@@ -123,7 +124,7 @@ class _LandingPageState extends State<LandingPage> {
                     },
                     child: Center(
                       child: Container(
-                        margin: EdgeInsets.only(top: 8),
+                        margin: const EdgeInsets.only(top: 8),
                         width: 95.0,
                         height: 95.0,
                         decoration: const BoxDecoration(
@@ -137,9 +138,9 @@ class _LandingPageState extends State<LandingPage> {
                     ),
                   ),
                 ),
-                Center(
+                const Center(
                   child: Padding(
-                    padding: const EdgeInsets.fromLTRB(16, 0, 16, 0),
+                    padding: EdgeInsets.fromLTRB(16, 0, 16, 0),
                     child: Text(
                       'mo\' feel',
                       style: TextStyle(
@@ -149,8 +150,8 @@ class _LandingPageState extends State<LandingPage> {
                     ),
                   ),
                 ),
-                Center(
-                  child: const Padding(
+                const Center(
+                  child: Padding(
                     padding: EdgeInsets.fromLTRB(16, 0, 16, 8),
                     child: Text(
                       '@mofeel',

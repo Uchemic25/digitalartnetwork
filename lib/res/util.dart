@@ -43,7 +43,7 @@ class Util {
                 style: TextStyle(fontSize: fontSize, color: Colors.white70),
                 decoration: InputDecoration.collapsed(
                   hintText: hint,
-                  hintStyle: TextStyle(color: Colors.white70),
+                  hintStyle: const TextStyle(color: Colors.white70),
                   border: InputBorder.none,
                 ),
               ),
@@ -140,6 +140,7 @@ class Util {
 
   static Widget registrationInputField({
     String? hint = "Write a comment",
+    String? label = "",
     IconData? icon,
     bool isIcon = false,
     double? size,
@@ -151,21 +152,24 @@ class Util {
     bool buttonAvailable = false,
     int field = 0,
     int selectedField = 20,
+    int maxLine = 1,
+    Color borderColor = Colors.grey,
     Function()? onPressed,
   }) {
     return Stack(
       children: [
         Container(
-          margin: EdgeInsets.only(left: 5),
+          margin: const EdgeInsets.only(left: 5),
+          padding: const EdgeInsets.only(left: 15, top: 15),
           child: TextView(
-            text: hint! + ":",
+            text: hint!,
             txtColor: Colors.white,
           ),
         ),
         InkWell(
           onTap: onPressed,
           child: Container(
-            padding: EdgeInsets.all(Dimension.borderRadius),
+            padding: const EdgeInsets.all(25),
             margin: EdgeInsets.only(
                 top: Dimension.regMargin, bottom: Dimension.marginSize),
             decoration: BoxDecoration(
@@ -173,9 +177,9 @@ class Util {
                   width: 1,
                   color: field == selectedField
                       ? ColorResource.selectedTextColor
-                      : Colors.grey),
+                      : borderColor),
               borderRadius: BorderRadius.circular(Dimension.borderRadius),
-              color: ColorResource.inputColor,
+              color: ColorResource.cardColor,
             ),
             child: InkWell(
               onTap: onPressed,
@@ -183,16 +187,15 @@ class Util {
                 children: [
                   Expanded(
                     child: TextField(
-                      minLines: 1,
-                      maxLines: 6,
+                      maxLines: maxLine,
                       obscureText: isPassword,
                       controller: controller,
                       keyboardType: inputType,
                       style:
                           TextStyle(fontSize: fontSize, color: Colors.white70),
-                      decoration: const InputDecoration.collapsed(
-                        hintText: "",
-                        hintStyle: TextStyle(color: Colors.white70),
+                      decoration: InputDecoration.collapsed(
+                        hintText: label!,
+                        hintStyle: const TextStyle(color: Colors.white70),
                         border: InputBorder.none,
                       ),
                     ),
