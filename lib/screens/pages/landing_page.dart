@@ -25,7 +25,7 @@ class _LandingPageState extends State<LandingPage> {
     Container(),
     Container(),
     Container(),
-    const UserProfilePage(),
+    UserProfilePage(),
   ];
 
   void _onItemTapped(int index) {

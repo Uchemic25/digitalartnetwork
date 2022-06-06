@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
+import '../../../../controllers/profile_page_controller.dart';
 import '../../../../res/color_resource.dart';
 import '../../../widgets/custom_text.dart';
 
@@ -11,11 +13,12 @@ class ProfileDetails extends StatefulWidget {
 }
 
 class _ProfileDetailsState extends State<ProfileDetails> {
-  int _selectedIdex = 0;
+  var controller = Get.find<ProfileController>();
 
   _isSelected({index}) {
     setState(() {
-      _selectedIdex = index;
+      controller.selectedIndex.value = index;
+      controller.selectedIndex.refresh();
     });
   }
 
@@ -181,14 +184,13 @@ class _ProfileDetailsState extends State<ProfileDetails> {
           children: [
             profileMenu(icon: Icons.home, title: 'Stream', index: 0),
             profileMenu(icon: Icons.person_pin, title: 'About', index: 1),
-            profileMenu(icon: Icons.web, title: 'Blog', index: 2),
             profileMenu(
                 icon: Icons.follow_the_signs_sharp,
                 title: 'Followers',
-                index: 3),
+                index: 2),
             profileMenu(
-                icon: Icons.people_alt_sharp, title: 'Challenges', index: 4),
-            profileMenu(icon: Icons.photo, title: 'Photos', index: 5),
+                icon: Icons.people_alt_sharp, title: 'Challenges', index: 3),
+            profileMenu(icon: Icons.photo, title: 'Photos', index: 4),
           ],
         ),
       )
@@ -204,7 +206,7 @@ class _ProfileDetailsState extends State<ProfileDetails> {
       child: Stack(
         alignment: Alignment.center,
         children: [
-          (_selectedIdex == index)
+          (controller.selectedIndex.value == index)
               ? Align(
                   alignment: Alignment.topCenter,
                   child: AnimatedContainer(
@@ -235,11 +237,11 @@ class _ProfileDetailsState extends State<ProfileDetails> {
                 ),
                 CustomText(
                   text: title,
-                  color: (_selectedIdex == index)
+                  color: (controller.selectedIndex.value == index)
                       ? ColorResource.lightPrimary
                       : ColorResource.grey,
                   size: 14,
-                  weight: (_selectedIdex == index)
+                  weight: (controller.selectedIndex.value == index)
                       ? FontWeight.w600
                       : FontWeight.w300,
                 ),
