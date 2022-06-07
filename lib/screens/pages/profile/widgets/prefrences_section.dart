@@ -201,6 +201,8 @@ class _PrefrencesSectionState extends State<PrefrencesSection> {
       ),
       DropdownView(
           borderColor: ColorResource.lightDivider,
+          borderRadius: 6,
+          fillColor: ColorResource.cardColor,
           isDense: true,
           prefixIcon: Container(),
           value: _idTypeDropdownValue,
