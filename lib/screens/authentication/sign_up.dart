@@ -1,6 +1,4 @@
-import 'package:digitalart/screens/authentication/sign_up_complete.dart';
 import 'package:digitalart/screens/widgets/custom_widget.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -30,7 +28,7 @@ class _SignUpState extends State<SignUp> {
           child: Container(
             margin:
                 const EdgeInsets.only(right: 25, left: 25, bottom: 25, top: 5),
-            padding: EdgeInsets.only(top: 15),
+            padding: const EdgeInsets.only(top: 15),
             decoration: BoxDecoration(
                 color: ColorResource.cardColor1,
                 border: Border.all(color: Colors.grey, width: 1.5)),
@@ -38,7 +36,7 @@ class _SignUpState extends State<SignUp> {
               children: [
                 Container(
                   alignment: Alignment.centerLeft,
-                  padding: EdgeInsets.only(left: 25, top: 10),
+                  padding: const EdgeInsets.only(left: 25, top: 10),
                   decoration: BoxDecoration(
                       color: ColorResource.cardColor1,
                       border: Border(
@@ -143,7 +141,7 @@ class _SignUpState extends State<SignUp> {
                   height: 3,
                 ),
                 Container(
-                  margin: EdgeInsets.only(right: 10),
+                  margin: const EdgeInsets.only(right: 10),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.start,
                     children: const [

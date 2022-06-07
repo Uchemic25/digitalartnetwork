@@ -1,9 +1,7 @@
 import 'package:digitalart/res/app_theme.dart';
-import 'package:digitalart/res/color_resource.dart';
 import 'package:digitalart/screens/authentication/sign_in.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:get/get_navigation/get_navigation.dart';
 
 import 'controllers/profile_page_controller.dart';
 import 'navigator/navigator.dart';

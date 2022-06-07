@@ -1,6 +1,5 @@
 import 'package:digitalart/screens/authentication/sign_in.dart';
 import 'package:digitalart/screens/widgets/custom_widget.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -73,7 +72,7 @@ class SignUpComplete extends StatelessWidget {
                 ],
               ),
               Container(
-                  margin: EdgeInsets.all(20),
+                  margin: const EdgeInsets.all(20),
                   child: Util.customElevatedButton(
                       text: "Sign Up",
                       function: () async {},

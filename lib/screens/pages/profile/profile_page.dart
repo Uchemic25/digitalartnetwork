@@ -1,12 +1,7 @@
-import 'package:digitalart/res/color_resource.dart';
-import 'package:digitalart/screens/widgets/custom_text.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 import '../../../controllers/profile_page_controller.dart';
-import '../../../core/models/user_model.dart';
-import '../../../res/util.dart';
-import '../../widgets/single_card_section.dart';
 import 'widgets/about_section.dart';
 import 'widgets/banner_section.dart';
 import 'widgets/profile_details.dart';
@@ -43,7 +38,10 @@ class UserProfilePage extends StatelessWidget {
           Obx(() {
             return IndexedStack(
               index: controller.selectedIndex.value,
-              children: [const StreamPage(), AboutPage()],
+              children: [
+                const StreamPage(),
+                AboutSection(),
+              ],
             );
           }),
         ],

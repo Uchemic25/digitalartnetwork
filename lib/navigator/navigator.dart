@@ -25,6 +25,6 @@ List<GetPage<dynamic>> pages = [
   ),
   GetPage(
     name: LandingPage.name,
-    page: () => LandingPage(),
+    page: () => const LandingPage(),
   ),
 ];

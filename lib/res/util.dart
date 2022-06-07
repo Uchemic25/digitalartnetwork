@@ -108,9 +108,9 @@ class Util {
       child: Container(
           height: 46,
           decoration: BoxDecoration(
-              color: !unique ? Color(0xFFFE1743) : bgColor,
+              color: !unique ? const Color(0xFFFE1743) : bgColor,
               border: Border.all(
-                  color: !unique ? Color(0xFFFE1743) : borderColor!,
+                  color: !unique ? const Color(0xFFFE1743) : borderColor!,
                   width: 1.7),
               borderRadius: BorderRadius.circular(radius)),
           child: Stack(
@@ -118,7 +118,7 @@ class Util {
               Align(
                   alignment: Alignment.centerLeft,
                   child: Padding(
-                    padding: EdgeInsets.only(left: 15),
+                    padding: const EdgeInsets.only(left: 15),
                     child: Icon(
                       icon,
                       color: !unique ? Colors.white : iconColor,

@@ -2,7 +2,6 @@ import 'package:digitalart/screens/authentication/forgot_password.dart';
 import 'package:digitalart/screens/authentication/sign_up.dart';
 import 'package:digitalart/screens/pages/landing_page.dart';
 import 'package:digitalart/screens/widgets/custom_widget.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -31,7 +30,7 @@ class SignIn extends StatelessWidget {
               children: [
                 Container(
                   alignment: Alignment.centerLeft,
-                  margin: EdgeInsets.only(left: 25),
+                  margin: const EdgeInsets.only(left: 25),
                   child: TextView(
                     text: "Sign-In",
                     fontSize: 40,

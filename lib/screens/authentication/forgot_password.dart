@@ -1,6 +1,4 @@
-import 'package:digitalart/screens/authentication/sign_up.dart';
 import 'package:digitalart/screens/widgets/custom_widget.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -26,7 +24,7 @@ class ForgotPassword extends StatelessWidget {
             children: [
               Container(
                 alignment: Alignment.centerLeft,
-                margin: EdgeInsets.only(left: 25),
+                margin: const EdgeInsets.only(left: 25),
                 child: TextView(
                   text: "Forgot Password",
                   fontSize: 30,
@@ -46,7 +44,7 @@ class ForgotPassword extends StatelessWidget {
                 height: 3,
               ),
               Container(
-                  margin: EdgeInsets.all(20),
+                  margin: const EdgeInsets.all(20),
                   child: Util.customElevatedButton(
                       text: "Recover Password",
                       function: () async {},
