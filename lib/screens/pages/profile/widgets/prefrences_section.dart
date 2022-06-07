@@ -199,31 +199,40 @@ class _PrefrencesSectionState extends State<PrefrencesSection> {
           weight: FontWeight.w400,
         ),
       ),
-      DropdownView(
-          borderColor: ColorResource.lightDivider,
-          borderRadius: 6,
-          fillColor: ColorResource.cardColor,
-          isDense: true,
-          prefixIcon: Container(),
-          value: _idTypeDropdownValue,
-          items:
-              _idTypeSpinnerItems.map<DropdownMenuItem<String>>((String value) {
-            return DropdownMenuItem<String>(
-              value: value,
-              child: Text(value),
-            );
-          }).toList(),
-          validator: null,
-          hintText: 'UTC+1',
-          onChanged: (String? value) =>
-              setState(() => _idTypeDropdownValue = value!)),
+      const SizedBox(
+        height: 15,
+      ),
+      Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 15),
+        child: DropdownView(
+            borderColor: ColorResource.lightDivider,
+            borderRadius: 6,
+            fillColor: ColorResource.cardColor,
+            isDense: true,
+            prefixIcon: Container(),
+            value: _idTypeDropdownValue,
+            items: _idTypeSpinnerItems
+                .map<DropdownMenuItem<String>>((String value) {
+              return DropdownMenuItem<String>(
+                value: value,
+                child: Text(value),
+              );
+            }).toList(),
+            validator: null,
+            hintText: 'UTC+1',
+            onChanged: (String? value) =>
+                setState(() => _idTypeDropdownValue = value!)),
+      ),
+      const SizedBox(
+        height: 15,
+      ),
       const Padding(
         padding: EdgeInsets.symmetric(horizontal: 15),
         child: CustomText(
           text: 'Disable all activity date and time in your own timezone',
           color: ColorResource.lightPrimary,
-          size: 14,
-          weight: FontWeight.w300,
+          size: 15,
+          weight: FontWeight.w400,
         ),
       ),
       const SizedBox(
@@ -267,12 +276,14 @@ class _PrefrencesSectionState extends State<PrefrencesSection> {
               const SizedBox(
                 width: 12,
               ),
-              const CustomText(
-                text:
-                    'Disable Chat (Messages will still work if you disable Chat)',
-                color: ColorResource.lightPrimary,
-                size: 16,
-                weight: FontWeight.w400,
+              const Flexible(
+                child: CustomText(
+                  text:
+                      'Disable Chat (Messages will still work if you disable Chat)',
+                  color: ColorResource.lightPrimary,
+                  size: 16,
+                  weight: FontWeight.w400,
+                ),
               ),
             ]),
           ),
@@ -306,11 +317,13 @@ class _PrefrencesSectionState extends State<PrefrencesSection> {
               const SizedBox(
                 width: 12,
               ),
-              const CustomText(
-                text: 'Open minimized chat window for new message',
-                color: ColorResource.lightPrimary,
-                size: 16,
-                weight: FontWeight.w400,
+              const Flexible(
+                child: CustomText(
+                  text: 'Open minimized chat window for new message',
+                  color: ColorResource.lightPrimary,
+                  size: 16,
+                  weight: FontWeight.w400,
+                ),
               ),
             ]),
           ),

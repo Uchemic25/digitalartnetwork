@@ -1,3 +1,4 @@
+import 'package:digitalart/res/color_resource.dart';
 import 'package:flutter/material.dart';
 
 class DropdownView<T> extends StatelessWidget {
@@ -55,6 +56,7 @@ class DropdownView<T> extends StatelessWidget {
           value: value,
           icon: icon,
           iconSize: 24,
+          dropdownColor: ColorResource.grey,
           elevation: 5,
           decoration: InputDecoration(
               border: _border(context),
@@ -75,6 +77,10 @@ class DropdownView<T> extends StatelessWidget {
               errorBorder: _border(context),
               disabledBorder: _border(context),
               hintText: hintText,
+              hintStyle: const TextStyle(
+                  fontWeight: FontWeight.w500,
+                  color: Colors.white,
+                  fontSize: 14),
               labelText: labelText,
               filled: filled,
               isDense: isDense,

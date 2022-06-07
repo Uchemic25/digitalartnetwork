@@ -1,4 +1,5 @@
 import 'package:digitalart/res/color_resource.dart';
+import 'package:digitalart/screens/pages/profile/widgets/notification_section.dart';
 import 'package:digitalart/screens/widgets/custom_text.dart';
 
 import 'package:flutter/material.dart';
@@ -63,7 +64,11 @@ class AboutSection extends StatelessWidget {
               Obx(() {
                 return IndexedStack(
                   index: controller.selectedTabIndex.value,
-                  children: [const AboutPage(), PrefrencesSection()],
+                  children: [
+                    const AboutPage(),
+                    PrefrencesSection(),
+                    NotificationPage()
+                  ],
                 );
               })
             ],
