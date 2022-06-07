@@ -7,6 +7,7 @@ class AppTheme {
   static ThemeData darkTheme = ThemeData(
     scaffoldBackgroundColor: ColorResource.scaffoldBackground,
     cardColor: ColorResource.cardColor,
+    dividerColor: ColorResource.lightDivider,
     appBarTheme: AppBarTheme(
         elevation: 5,
         titleTextStyle: ThemeData.light().textTheme.headline6!.copyWith(

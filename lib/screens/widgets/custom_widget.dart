@@ -79,11 +79,11 @@ class _InputPasswordFieldState extends State<InputPasswordField> {
       borderRadius: BorderRadius.circular(35),
       child: Container(
         height: 46,
-        padding: EdgeInsets.only(left: 20, right: 15),
+        padding: const EdgeInsets.only(left: 20, right: 15),
         decoration: BoxDecoration(
           border: Border.all(width: 1, color: ColorResource.cardColor1),
           borderRadius: BorderRadius.circular(35),
-          color: Color(0xffffffff),
+          color: const Color(0xffffffff),
         ),
         child: SizedBox(
             width: size,
@@ -97,7 +97,8 @@ class _InputPasswordFieldState extends State<InputPasswordField> {
               style: TextStyle(color: ColorResource.cardColor1, fontSize: 16),
               decoration: InputDecoration(
                 hintText: widget.textHint,
-                hintStyle: TextStyle(color: Color(0x57000000), fontSize: 16),
+                hintStyle:
+                    const TextStyle(color: Color(0x57000000), fontSize: 16),
                 border: InputBorder.none,
                 suffixIcon: GestureDetector(
                   onTap: _toggleIcon,
