@@ -18,8 +18,10 @@ class StreamPage extends StatelessWidget {
         Padding(
           padding: const EdgeInsets.symmetric(horizontal: 9.0, vertical: 0),
           child: Util.registrationInputField(
-            label: 'Say what is on your mind...',
-            hint: '',
+            label: '',
+            hint: 'Say what is on your mind',
+            required: '',
+            color: ColorResource.cardColor,
             maxLine: 6,
             borderColor: Colors.transparent,
           ),
