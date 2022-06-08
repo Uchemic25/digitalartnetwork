@@ -202,6 +202,7 @@ class _ProfileDetailsState extends State<ProfileDetails> {
     return InkWell(
       onTap: () {
         _isSelected(index: index);
+        controller.onSelected(index);
       },
       child: Stack(
         alignment: Alignment.center,

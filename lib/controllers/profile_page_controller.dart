@@ -1,10 +1,19 @@
+import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 class ProfileController extends GetxController {
   var selectedIndex = 0.obs;
   var selectedTabIndex = 0.obs;
   var toogleOnlineStatus = false.obs;
-  var idEmailNotifyValue = 'Real time'.obs;
+  var idEmailNotifyValue = ''.obs;
+  var pageViewController = PageController(
+    initialPage: 0,
+  ).obs;
+
+  void onSelected(int index) {
+    pageViewController.value.animateToPage(index,
+        duration: const Duration(milliseconds: 500), curve: Curves.ease);
+  }
 
   final List<String> idEmailNotifyItems = [
     'Real time',
