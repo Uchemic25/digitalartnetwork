@@ -8,6 +8,7 @@ import 'package:get/get.dart';
 import '../../../../controllers/profile_page_controller.dart';
 import 'about_page.dart';
 import 'account_section.dart';
+import 'followers_section.dart';
 import 'prefrences_section.dart';
 
 class AboutSection extends StatelessWidget {
@@ -69,7 +70,7 @@ class AboutSection extends StatelessWidget {
                     const AboutPage(),
                     PrefrencesSection(),
                     NotificationPage(),
-                    const AccountSection()
+                    const AccountSection(),
                   ],
                 );
               })

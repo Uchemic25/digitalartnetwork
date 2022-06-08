@@ -4,6 +4,7 @@ import 'package:get/get.dart';
 import '../../../controllers/profile_page_controller.dart';
 import 'widgets/about_section.dart';
 import 'widgets/banner_section.dart';
+import 'widgets/followers_section.dart';
 import 'widgets/profile_details.dart';
 import 'widgets/stream_section.dart';
 
@@ -37,10 +38,10 @@ class UserProfilePage extends StatelessWidget {
           Obx(() {
             return IndexedStack(
               index: controller.selectedIndex.value,
-              sizing: StackFit.passthrough,
               children: [
                 const StreamPage(),
                 AboutSection(),
+                FollowersSection()
               ],
             );
           }),

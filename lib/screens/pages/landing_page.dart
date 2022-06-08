@@ -43,14 +43,10 @@ class _LandingPageState extends State<LandingPage> {
           padding: const EdgeInsets.all(8.0),
           child: InkWell(
             onTap: () => _scaffoldKey.currentState!.openDrawer(),
-            child: Container(
-              decoration: const BoxDecoration(
-                shape: BoxShape.circle,
-                image: DecorationImage(
-                  fit: BoxFit.fill,
-                  image: AssetImage('assets/images/face1.jpeg'),
-                ),
-              ),
+            child: const Icon(
+              Icons.menu,
+              color: Colors.white38,
+              size: 32,
             ),
           ),
         ),
