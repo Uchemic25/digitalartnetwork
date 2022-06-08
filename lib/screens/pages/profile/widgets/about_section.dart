@@ -7,6 +7,7 @@ import 'package:get/get.dart';
 
 import '../../../../controllers/profile_page_controller.dart';
 import 'about_page.dart';
+import 'account_section.dart';
 import 'prefrences_section.dart';
 
 class AboutSection extends StatelessWidget {
@@ -67,7 +68,8 @@ class AboutSection extends StatelessWidget {
                   children: [
                     const AboutPage(),
                     PrefrencesSection(),
-                    NotificationPage()
+                    NotificationPage(),
+                    const AccountSection()
                   ],
                 );
               })

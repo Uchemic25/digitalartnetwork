@@ -140,6 +140,7 @@ class Util {
 
   static Widget registrationInputField({
     String? hint = "Write a comment",
+    String? required = "*",
     String? label = "",
     IconData? icon,
     bool isIcon = false,
@@ -156,22 +157,34 @@ class Util {
     Color borderColor = Colors.grey,
     Function()? onPressed,
   }) {
-    return Stack(
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Container(
-          margin: const EdgeInsets.only(left: 5),
-          padding: const EdgeInsets.only(left: 15, top: 15),
-          child: TextView(
-            text: hint!,
-            txtColor: Colors.white,
+        Text.rich(TextSpan(children: [
+          TextSpan(
+              text: label,
+              style: const TextStyle(
+                  fontWeight: FontWeight.w300,
+                  color: ColorResource.lightPrimary,
+                  fontSize: 14)),
+          WidgetSpan(
+            child: Transform.translate(
+              offset: const Offset(2, -1),
+              child: Text(required!,
+                  style: const TextStyle(
+                      color: Colors.red,
+                      fontWeight: FontWeight.w400,
+                      fontSize: 14)),
+            ),
           ),
+        ])),
+        const SizedBox(
+          height: 8,
         ),
         InkWell(
           onTap: onPressed,
           child: Container(
-            padding: const EdgeInsets.all(25),
-            margin: EdgeInsets.only(
-                top: Dimension.regMargin, bottom: Dimension.marginSize),
+            padding: const EdgeInsets.all(16),
             decoration: BoxDecoration(
               border: Border.all(
                   width: 1,
@@ -179,7 +192,7 @@ class Util {
                       ? ColorResource.selectedTextColor
                       : borderColor),
               borderRadius: BorderRadius.circular(Dimension.borderRadius),
-              color: ColorResource.cardColor,
+              color: color,
             ),
             child: InkWell(
               onTap: onPressed,
@@ -194,7 +207,7 @@ class Util {
                       style:
                           TextStyle(fontSize: fontSize, color: Colors.white70),
                       decoration: InputDecoration.collapsed(
-                        hintText: label!,
+                        hintText: hint,
                         hintStyle: const TextStyle(color: Colors.white70),
                         border: InputBorder.none,
                       ),

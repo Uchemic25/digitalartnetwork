@@ -27,7 +27,6 @@ class UserProfilePage extends StatelessWidget {
               child: ListView(
                 shrinkWrap: true,
                 physics: const NeverScrollableScrollPhysics(),
-                padding: const EdgeInsets.symmetric(horizontal: 0, vertical: 0),
                 children: const [
                   BannerSection(),
                   ProfileDetails(),
@@ -38,6 +37,7 @@ class UserProfilePage extends StatelessWidget {
           Obx(() {
             return IndexedStack(
               index: controller.selectedIndex.value,
+              sizing: StackFit.passthrough,
               children: [
                 const StreamPage(),
                 AboutSection(),

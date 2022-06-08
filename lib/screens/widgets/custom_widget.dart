@@ -22,12 +22,11 @@ AppBar CustomAppBar(String title,
 }
 
 class InputPasswordField extends StatefulWidget {
-  // InputPasswordField({Key key}) : super(key: key);
-
   final String labelText;
   final String textHint;
   final IconData? icon;
   final Color? iconColor;
+  final Color? bgColor;
   final TextInputType? textInputType;
   final double? hintSize;
   final TextEditingController? controller;
@@ -37,6 +36,9 @@ class InputPasswordField extends StatefulWidget {
   final double radius;
   final double elevation;
   final double padding;
+  final double? height;
+  final double? borderWidth;
+  final Color? borderColor;
 
   InputPasswordField({
     Key? key,
@@ -53,6 +55,10 @@ class InputPasswordField extends StatefulWidget {
     this.elevation = 3,
     this.padding = 16.0,
     this.hintSize,
+    this.bgColor = Colors.white12,
+    this.borderWidth = 1,
+    this.height,
+    this.borderColor,
   }) : super(key: key);
 
   @override
@@ -75,15 +81,15 @@ class _InputPasswordFieldState extends State<InputPasswordField> {
       TextEditingController? controller,
       bool isPassword = false}) {
     return Material(
-      elevation: 4,
-      borderRadius: BorderRadius.circular(35),
+      elevation: widget.elevation,
+      borderRadius: BorderRadius.circular(widget.radius),
       child: Container(
         height: 46,
         padding: const EdgeInsets.only(left: 20, right: 15),
         decoration: BoxDecoration(
-          border: Border.all(width: 1, color: ColorResource.cardColor1),
-          borderRadius: BorderRadius.circular(35),
-          color: const Color(0xffffffff),
+          border: Border.all(width: 1, color: widget.borderColor!),
+          borderRadius: BorderRadius.circular(widget.radius),
+          color: widget.bgColor!,
         ),
         child: SizedBox(
             width: size,
@@ -94,18 +100,18 @@ class _InputPasswordFieldState extends State<InputPasswordField> {
               focusNode: widget.myFocusNode,
               onChanged: widget.onChanged!(),
               cursorColor: ColorResource.customBlue,
-              style: TextStyle(color: ColorResource.cardColor1, fontSize: 16),
+              style: const TextStyle(
+                  color: ColorResource.lightPrimary, fontSize: 16),
               decoration: InputDecoration(
                 hintText: widget.textHint,
-                hintStyle:
-                    const TextStyle(color: Color(0x57000000), fontSize: 16),
+                hintStyle: const TextStyle(color: Colors.white24, fontSize: 16),
                 border: InputBorder.none,
                 suffixIcon: GestureDetector(
                   onTap: _toggleIcon,
                   child: Icon(
                     _obscureText ? Icons.visibility : Icons.visibility_off,
                     size: 25.0,
-                    color: ColorResource.cardColor1,
+                    color: Colors.white24,
                   ),
                 ),
               ),
