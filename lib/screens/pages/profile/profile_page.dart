@@ -4,7 +4,7 @@ import 'package:get/get.dart';
 import '../../../controllers/profile_page_controller.dart';
 import 'widgets/about_section.dart';
 import 'widgets/banner_section.dart';
-import 'widgets/followers_section.dart';
+import 'widgets/follow_section.dart';
 import 'widgets/profile_details.dart';
 import 'widgets/stream_section.dart';
 

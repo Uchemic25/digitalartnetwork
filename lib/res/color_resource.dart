@@ -34,5 +34,8 @@ class ColorResource {
   static Color customBlue = const Color(0xff0085ff);
   // static Color btnTxtColor = const Color(0xfff4f4f4);
 
+  static Color inputRegColor = const Color(0xff2d3239);
+  static Color inputRegColorLight = const Color(0xff3c4047);
+
   static Color btnTxtColor = Colors.white70;
 }

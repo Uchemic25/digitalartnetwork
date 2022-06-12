@@ -6,11 +6,19 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 import '../../res/color_resource.dart';
+import '../../res/dimension.dart';
 import '../../res/util.dart';
 import '../widgets/textview.dart';
 
-class SignIn extends StatelessWidget {
+class SignIn extends StatefulWidget {
   static String name = "/sign-in";
+
+  @override
+  State<SignIn> createState() => _SignInState();
+}
+
+class _SignInState extends State<SignIn> {
+  int selectedField = 20;
 
   @override
   Widget build(BuildContext context) {
@@ -21,39 +29,81 @@ class SignIn extends StatelessWidget {
           color: ColorResource.cardColor1,
           height: double.infinity,
           child: Container(
-            margin: const EdgeInsets.all(25),
+            margin: const EdgeInsets.only(
+              right: 15,
+              left: 15,
+              bottom: 25,
+            ),
             decoration: BoxDecoration(
                 color: ColorResource.cardColor1,
-                border: Border.all(color: Colors.grey, width: 1.5)),
+                border: Border.all(
+                    color: ColorResource.inputRegColorLight, width: 1)),
             child: ListView(
               shrinkWrap: true,
               children: [
+                divider(height: 30),
                 Container(
                   alignment: Alignment.centerLeft,
-                  margin: const EdgeInsets.only(left: 25),
-                  child: TextView(
-                    text: "Sign-In",
-                    fontSize: 40,
-                    txtColor: ColorResource.btnTxtColor,
-                    fontWeight: FontWeight.w900,
+                  padding: const EdgeInsets.only(left: 15, top: 10),
+                  decoration: BoxDecoration(
+                      color: ColorResource.cardColor1,
+                      border: Border(
+                          left: BorderSide(
+                              color: ColorResource.selectedTextColor,
+                              width: 2))),
+                  child: Container(
+                    width: double.infinity,
+                    padding: EdgeInsets.only(bottom: 5),
+                    decoration: BoxDecoration(
+                        color: ColorResource.cardColor1,
+                        border: Border(
+                            bottom: BorderSide(
+                                color: ColorResource.inputRegColorLight,
+                                width: 1))),
+                    child: TextView(
+                      text: "Sign-In",
+                      fontSize: Dimension.fontSizeMedium,
+                      txtColor: ColorResource.btnTxtColor,
+                      fontWeight: FontWeight.w600,
+                    ),
                   ),
                 ),
                 const SizedBox(
                   height: 20,
                 ),
-                Util.inputField2(
-                    hint: "Username",
-                    size: double.infinity,
-                    // controller: regControl.emailController,
-                    inputType: TextInputType.text),
-                const SizedBox(
-                  height: 3,
+                divider(),
+                Util.registrationInputField(
+                  label: "Username",
+                  //hint: "Email",
+                  size: double.infinity,
+                  // controller: regControl.emailController,
+                  inputType: TextInputType.text,
+                  field: 2,
+                  selectedField: selectedField,
+                  color: ColorResource.inputRegColor,
+                  borderColor: ColorResource.inputRegColor,
+                  onPressed: () {
+                    selectedField = 2;
+                    setState(() {});
+                  },
                 ),
-                Util.inputField2(
-                    hint: "Password",
-                    size: double.infinity,
-                    // controller: regControl.emailController,
-                    inputType: TextInputType.number),
+                divider(),
+                Util.registrationInputField(
+                  label: "Password",
+                  //hint: "Password",
+                  size: double.infinity,
+                  // controller: regControl.emailController,
+                  inputType: TextInputType.text,
+                  color: ColorResource.inputRegColor,
+                  borderColor: ColorResource.inputRegColor,
+                  field: 3,
+                  selectedField: selectedField,
+                  onPressed: () {
+                    selectedField = 3;
+                    setState(() {});
+                  },
+                ),
+                divider(),
                 Container(
                     margin: EdgeInsets.all(20),
                     child: Util.customElevatedButton(
@@ -91,6 +141,12 @@ class SignIn extends StatelessWidget {
           ),
         ),
       ),
+    );
+  }
+
+  Widget divider({double height = 8}) {
+    return SizedBox(
+      height: height,
     );
   }
 }

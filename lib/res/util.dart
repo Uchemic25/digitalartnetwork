@@ -78,7 +78,7 @@ class Util {
           onPressed: function!,
           child: Text(text!.toUpperCase(),
               style: TextStyle(
-                fontSize: Dimension.fontSizeBig,
+                fontSize: Dimension.fontSizeVSmall,
                 color: Colors.white,
               )),
           style: ButtonStyle(
@@ -139,7 +139,7 @@ class Util {
   }
 
   static Widget registrationInputField({
-    String? hint = "Write a comment",
+    String? hint = "",
     String? required = "*",
     String? label = "",
     IconData? icon,
@@ -160,62 +160,62 @@ class Util {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Text.rich(TextSpan(children: [
-          TextSpan(
-              text: label,
-              style: const TextStyle(
-                  fontWeight: FontWeight.w300,
-                  color: ColorResource.lightPrimary,
-                  fontSize: 14)),
-          WidgetSpan(
-            child: Transform.translate(
-              offset: const Offset(2, -1),
-              child: Text(required!,
-                  style: const TextStyle(
-                      color: Colors.red,
-                      fontWeight: FontWeight.w400,
-                      fontSize: 14)),
-            ),
-          ),
-        ])),
-        const SizedBox(
-          height: 8,
-        ),
-        InkWell(
-          onTap: onPressed,
-          child: Container(
-            padding: const EdgeInsets.all(16),
-            decoration: BoxDecoration(
-              border: Border.all(
-                  width: 1,
-                  color: field == selectedField
-                      ? ColorResource.selectedTextColor
-                      : borderColor),
-              borderRadius: BorderRadius.circular(Dimension.borderRadius),
-              color: color,
-            ),
-            child: InkWell(
-              onTap: onPressed,
-              child: Row(
-                children: [
-                  Expanded(
-                    child: TextField(
-                      maxLines: maxLine,
-                      obscureText: isPassword,
-                      controller: controller,
-                      keyboardType: inputType,
-                      style:
-                          TextStyle(fontSize: fontSize, color: Colors.white70),
-                      decoration: InputDecoration.collapsed(
-                        hintText: hint,
-                        hintStyle: const TextStyle(color: Colors.white70),
-                        border: InputBorder.none,
-                      ),
-                    ),
-                  ),
-                ],
+        Container(
+          margin: EdgeInsets.only(left: 5),
+          child: Text.rich(TextSpan(children: [
+            TextSpan(
+                text: label,
+                style: const TextStyle(
+                    fontWeight: FontWeight.w300,
+                    color: ColorResource.lightPrimary,
+                    fontSize: 12)),
+            WidgetSpan(
+              child: Transform.translate(
+                offset: const Offset(2, -1),
+                child: Text(required!,
+                    style: const TextStyle(
+                        color: Colors.red,
+                        fontWeight: FontWeight.w400,
+                        fontSize: 14)),
               ),
             ),
+          ])),
+        ),
+        const SizedBox(
+          height: 3,
+        ),
+        Container(
+          padding: const EdgeInsets.all(8),
+          margin: const EdgeInsets.all(1.5),
+          decoration: BoxDecoration(
+            border: Border.all(
+                width: 1,
+                color: field == selectedField
+                    ? ColorResource.selectedTextColor
+                    : borderColor),
+            borderRadius: BorderRadius.circular(8),
+            color: field == selectedField
+                ? ColorResource.inputRegColorLight
+                : color,
+          ),
+          child: Row(
+            children: [
+              Expanded(
+                child: TextField(
+                  maxLines: maxLine,
+                  obscureText: isPassword,
+                  controller: controller,
+                  keyboardType: inputType,
+                  style: TextStyle(fontSize: fontSize, color: Colors.white70),
+                  decoration: InputDecoration.collapsed(
+                    hintText: hint,
+                    hintStyle: const TextStyle(color: Colors.white70),
+                    border: InputBorder.none,
+                  ),
+                  onTap: onPressed,
+                ),
+              ),
+            ],
           ),
         ),
       ],
