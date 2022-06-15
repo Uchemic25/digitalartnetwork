@@ -5,12 +5,19 @@ class ProfileController extends GetxController {
   var selectedIndex = 0.obs;
   var selectedTabIndex = 0.obs;
   var selectedFollowersTabIndex = 0.obs;
+  var selectedTabbedIndex = 0.obs;
 
   var toogleOnlineStatus = false.obs;
   var idEmailNotifyValue = 'Real time'.obs;
   var pageViewController = PageController(
     initialPage: 0,
   ).obs;
+
+  var toggleView = true.obs;
+
+  toggleViewStatus({required bool value}) {
+    toggleView.value = value;
+  }
 
   var followPageViewController = PageController(
     initialPage: 0,

@@ -8,6 +8,7 @@ import '../../widgets/custom_text.dart';
 import 'package:get/get.dart';
 
 import '../../widgets/drop_down_view.dart';
+import '../profile/widgets/toogle_view_type.dart';
 import 'widgets/challenge_card.dart';
 
 class ChallengesPage extends StatelessWidget {
@@ -26,7 +27,17 @@ class ChallengesPage extends StatelessWidget {
           ),
           Row(
             children: [
-              displayType(),
+              Obx(() {
+                return ToogleViewType(
+                  buttonState: controller.toggleView.value,
+                  onPressed1: () {
+                    controller.toggleViewStatus(value: true);
+                  },
+                  onPressed2: () {
+                    controller.toggleViewStatus(value: false);
+                  },
+                );
+              }),
               const Spacer(),
               ButtonView(
                 expanded: false,
@@ -85,82 +96,6 @@ class ChallengesPage extends StatelessWidget {
           const ChallengeCard()
         ]),
       ),
-    );
-  }
-
-  displayType() {
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.center,
-      children: [
-        GestureDetector(
-          onTap: () {
-            controller.toggleViewStatus(value: true);
-          },
-          child: Card(
-            margin: const EdgeInsets.all(0),
-            shape: const RoundedRectangleBorder(
-                borderRadius: BorderRadius.only(
-              topLeft: Radius.circular(6),
-              bottomLeft: Radius.circular(6),
-            )),
-            color: ColorResource.cardColor,
-            child: Obx(() {
-              return Container(
-                padding: const EdgeInsets.all(14),
-                decoration: BoxDecoration(
-                  borderRadius: const BorderRadius.only(
-                    topLeft: Radius.circular(6),
-                    bottomLeft: Radius.circular(6),
-                  ),
-                  color: controller.toggleView.value
-                      ? ColorResource.cardColor
-                      : Colors.white12,
-                ),
-                child: Center(
-                    child: Icon(
-                  Icons.grid_view_rounded,
-                  size: 20,
-                  color: ColorResource.selectedTextColor,
-                )),
-              );
-            }),
-          ),
-        ),
-        GestureDetector(
-          onTap: () {
-            controller.toggleViewStatus(value: false);
-          },
-          child: Card(
-            margin: const EdgeInsets.only(left: 2),
-            shape: const RoundedRectangleBorder(
-                borderRadius: BorderRadius.only(
-              topRight: Radius.circular(6),
-              bottomRight: Radius.circular(6),
-            )),
-            color: ColorResource.cardColor,
-            child: Obx(() {
-              return Container(
-                padding: const EdgeInsets.all(14),
-                decoration: BoxDecoration(
-                  borderRadius: const BorderRadius.only(
-                    topRight: Radius.circular(6),
-                    bottomRight: Radius.circular(6),
-                  ),
-                  color: !controller.toggleView.value
-                      ? ColorResource.cardColor
-                      : Colors.white12,
-                ),
-                child: Center(
-                    child: Icon(
-                  Icons.list_alt,
-                  size: 22,
-                  color: ColorResource.selectedTextColor,
-                )),
-              );
-            }),
-          ),
-        ),
-      ],
     );
   }
 }
