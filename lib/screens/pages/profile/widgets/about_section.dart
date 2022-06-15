@@ -8,7 +8,10 @@ import 'package:get/get.dart';
 import '../../../../controllers/profile_page_controller.dart';
 import 'about_page.dart';
 import 'account_section.dart';
+<<<<<<< HEAD
 import 'follow_section.dart';
+=======
+>>>>>>> d5907878e8294d9eed4169e3cffa9f526a4fce89
 import 'prefrences_section.dart';
 
 class AboutSection extends StatelessWidget {

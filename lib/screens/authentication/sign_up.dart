@@ -1,3 +1,4 @@
+import 'package:digitalart/res/dimension.dart';
 import 'package:digitalart/screens/widgets/custom_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -26,36 +27,54 @@ class _SignUpState extends State<SignUp> {
           color: ColorResource.cardColor1,
           height: double.infinity,
           child: Container(
-            margin:
-                const EdgeInsets.only(right: 25, left: 25, bottom: 25, top: 5),
-            padding: const EdgeInsets.only(top: 15),
+            margin: const EdgeInsets.only(
+              right: 15,
+              left: 15,
+              bottom: 25,
+            ),
             decoration: BoxDecoration(
                 color: ColorResource.cardColor1,
-                border: Border.all(color: Colors.grey, width: 1.5)),
+                border: Border.all(
+                    color: ColorResource.inputRegColorLight, width: 1)),
             child: ListView(
+              shrinkWrap: true,
               children: [
+                divider(height: 30),
                 Container(
                   alignment: Alignment.centerLeft,
-                  padding: const EdgeInsets.only(left: 25, top: 10),
+                  padding: const EdgeInsets.only(left: 15, top: 10),
                   decoration: BoxDecoration(
                       color: ColorResource.cardColor1,
                       border: Border(
                           left: BorderSide(
                               color: ColorResource.selectedTextColor,
-                              width: 8))),
-                  child: TextView(
-                    text: "Registration",
-                    fontSize: 40,
-                    txtColor: ColorResource.btnTxtColor,
-                    fontWeight: FontWeight.w900,
+                              width: 2))),
+                  child: Container(
+                    width: double.infinity,
+                    padding: EdgeInsets.only(bottom: 5),
+                    decoration: BoxDecoration(
+                        color: ColorResource.cardColor1,
+                        border: Border(
+                            bottom: BorderSide(
+                                color: ColorResource.inputRegColorLight,
+                                width: 1))),
+                    child: TextView(
+                      text: "REGISTER",
+                      fontSize: Dimension.fontSizeMedium,
+                      txtColor: ColorResource.btnTxtColor,
+                      fontWeight: FontWeight.w600,
+                    ),
                   ),
                 ),
                 const SizedBox(
                   height: 14,
                 ),
                 Util.registrationInputField(
-                  hint: "Username",
+                  label: "Username",
+                  //hint: "Username",
                   size: double.infinity,
+                  color: ColorResource.inputRegColor,
+                  borderColor: ColorResource.inputRegColor,
                   // controller: regControl.emailController,
                   inputType: TextInputType.text,
                   field: 1,
@@ -65,29 +84,31 @@ class _SignUpState extends State<SignUp> {
                     setState(() {});
                   },
                 ),
-                const SizedBox(
-                  height: 3,
-                ),
+                divider(),
                 Util.registrationInputField(
-                  hint: "Email",
+                  label: "Email",
+                  //hint: "Email",
                   size: double.infinity,
                   // controller: regControl.emailController,
-                  inputType: TextInputType.number,
+                  inputType: TextInputType.text,
                   field: 2,
                   selectedField: selectedField,
+                  color: ColorResource.inputRegColor,
+                  borderColor: ColorResource.inputRegColor,
                   onPressed: () {
                     selectedField = 2;
                     setState(() {});
                   },
                 ),
-                const SizedBox(
-                  height: 3,
-                ),
+                divider(),
                 Util.registrationInputField(
-                  hint: "Password",
+                  label: "Password",
+                  //hint: "Password",
                   size: double.infinity,
                   // controller: regControl.emailController,
-                  inputType: TextInputType.number,
+                  inputType: TextInputType.text,
+                  color: ColorResource.inputRegColor,
+                  borderColor: ColorResource.inputRegColor,
                   field: 3,
                   selectedField: selectedField,
                   onPressed: () {
@@ -95,14 +116,15 @@ class _SignUpState extends State<SignUp> {
                     setState(() {});
                   },
                 ),
-                const SizedBox(
-                  height: 3,
-                ),
+                divider(),
                 Util.registrationInputField(
-                  hint: "Confirm Password",
+                  label: "Confirm Password",
+                  //hint: "Confirm Password",
                   size: double.infinity,
                   // controller: regControl.emailController,
-                  inputType: TextInputType.number,
+                  inputType: TextInputType.text,
+                  color: ColorResource.inputRegColor,
+                  borderColor: ColorResource.inputRegColor,
                   field: 4,
                   selectedField: selectedField,
                   onPressed: () {
@@ -110,11 +132,15 @@ class _SignUpState extends State<SignUp> {
                     setState(() {});
                   },
                 ),
+                divider(),
                 Util.registrationInputField(
-                  hint: "Country",
+                  label: "Country",
+                  //hint: "Country",
                   size: double.infinity,
                   // controller: regControl.emailController,
                   inputType: TextInputType.text,
+                  color: ColorResource.inputRegColor,
+                  borderColor: ColorResource.inputRegColor,
                   field: 5,
                   selectedField: selectedField,
                   onPressed: () {
@@ -122,24 +148,23 @@ class _SignUpState extends State<SignUp> {
                     setState(() {});
                   },
                 ),
-                const SizedBox(
-                  height: 3,
-                ),
+                divider(),
                 Util.registrationInputField(
-                  hint: "City",
+                  label: "City",
+                  //hint: "City",
                   size: double.infinity,
                   // controller: regControl.emailController,
-                  inputType: TextInputType.number,
+                  inputType: TextInputType.text,
+                  color: ColorResource.inputRegColor,
+                  borderColor: ColorResource.inputRegColor,
                   field: 6,
                   selectedField: selectedField,
                   onPressed: () {
-                    selectedField = 20;
+                    selectedField = 6;
                     setState(() {});
                   },
                 ),
-                const SizedBox(
-                  height: 3,
-                ),
+                divider(height: 10),
                 Container(
                   margin: const EdgeInsets.only(right: 10),
                   child: Row(
@@ -189,6 +214,12 @@ class _SignUpState extends State<SignUp> {
           ),
         ),
       ),
+    );
+  }
+
+  Widget divider({double height = 8}) {
+    return SizedBox(
+      height: height,
     );
   }
 }

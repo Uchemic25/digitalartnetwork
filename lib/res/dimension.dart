@@ -10,4 +10,5 @@ class Dimension {
   static double fontSizeBig = 18;
   static double fontSizeSmall = 14;
   static double fontSizeMedium = 16;
+  static double fontSizeVSmall = 12;
 }
