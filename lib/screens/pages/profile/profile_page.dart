@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 import '../../../controllers/profile_page_controller.dart';
+import '../challenges/challenges_page.dart';
 import 'widgets/about_section.dart';
 import 'widgets/banner_section.dart';
 import 'widgets/follow_section.dart';
@@ -41,7 +42,8 @@ class UserProfilePage extends StatelessWidget {
               children: [
                 const StreamPage(),
                 AboutSection(),
-                FollowersSection()
+                FollowersSection(),
+                ChallengesPage()
               ],
             );
           }),

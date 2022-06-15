@@ -7,7 +7,6 @@ import '../../res/dimension.dart';
 import '../../res/util.dart';
 import '../pages/landing_page.dart';
 import '../widgets/textview.dart';
-import 'forgot_password.dart';
 import 'sign_in.dart';
 
 class ForgotPassword extends StatefulWidget {
@@ -55,7 +54,7 @@ class _ForgotPasswordState extends State<ForgotPassword> {
                               width: 2))),
                   child: Container(
                     width: double.infinity,
-                    padding: EdgeInsets.only(bottom: 5),
+                    padding: const EdgeInsets.only(bottom: 5),
                     decoration: BoxDecoration(
                         color: ColorResource.cardColor1,
                         border: Border(

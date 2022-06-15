@@ -17,11 +17,10 @@ class ChallengesPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-        body: ListView(
-            shrinkWrap: true,
-            padding: const EdgeInsets.symmetric(horizontal: 15),
-            children: [
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 15),
+      child: SingleChildScrollView(
+        child: Column(children: [
           const SizedBox(
             height: 20,
           ),
@@ -47,50 +46,46 @@ class ChallengesPage extends StatelessWidget {
               ),
             ],
           ),
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 9.0, vertical: 0),
-            child: Util.registrationInputField(
-              label: '',
-              padding: 1,
-              hint: '  Start typing to search...',
-              suffixIcon: const Icon(
-                Icons.settings,
-                color: Colors.white60,
-              ),
-              required: '',
-              color: ColorResource.cardColor,
-              borderColor: Colors.transparent,
+          Util.registrationInputField(
+            label: '',
+            padding: 1,
+            hint: '  Start typing to search...',
+            suffixIcon: const Icon(
+              Icons.settings,
+              color: Colors.white60,
             ),
+            required: '',
+            color: ColorResource.cardColor,
+            borderColor: Colors.transparent,
           ),
           const SizedBox(
             height: 20,
           ),
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 15),
-            child: DropdownView(
-                borderColor: ColorResource.lightDivider,
-                borderRadius: 6,
-                filled: false,
-                fillColor: ColorResource.cardColor,
-                isDense: true,
-                value: controller.challengeFilterValue.value,
-                items: controller.challengeFilterItems
-                    .map<DropdownMenuItem<String>>((String value) {
-                  return DropdownMenuItem<String>(
-                    value: value,
-                    child: CustomText(color: Colors.white54, text: value),
-                  );
-                }).toList(),
-                validator: null,
-                hintText: '',
-                onChanged: (String? value) =>
-                    controller.challengeFilterValue.value = value!),
-          ),
+          DropdownView(
+              borderColor: ColorResource.lightDivider,
+              borderRadius: 6,
+              filled: false,
+              fillColor: ColorResource.cardColor,
+              isDense: true,
+              value: controller.challengeFilterValue.value,
+              items: controller.challengeFilterItems
+                  .map<DropdownMenuItem<String>>((String value) {
+                return DropdownMenuItem<String>(
+                  value: value,
+                  child: CustomText(color: Colors.white54, text: value),
+                );
+              }).toList(),
+              validator: null,
+              hintText: '',
+              onChanged: (String? value) =>
+                  controller.challengeFilterValue.value = value!),
           const SizedBox(
             height: 30,
           ),
           const ChallengeCard()
-        ]));
+        ]),
+      ),
+    );
   }
 
   displayType() {
