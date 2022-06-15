@@ -185,40 +185,6 @@ class Util {
         const SizedBox(
           height: 3,
         ),
-<<<<<<< HEAD
-        InkWell(
-          onTap: onPressed,
-          child: Container(
-            padding: EdgeInsets.all(padding),
-            decoration: BoxDecoration(
-              border: Border.all(
-                  width: 1,
-                  color: field == selectedField
-                      ? ColorResource.selectedTextColor
-                      : borderColor),
-              borderRadius: BorderRadius.circular(Dimension.borderRadius),
-              color: color,
-            ),
-            child: InkWell(
-              onTap: onPressed,
-              child: Row(
-                children: [
-                  Expanded(
-                    child: TextField(
-                      maxLines: maxLine,
-                      obscureText: isPassword,
-                      controller: controller,
-                      keyboardType: inputType,
-                      style:
-                          TextStyle(fontSize: fontSize, color: Colors.white70),
-                      decoration: InputDecoration(
-                        suffixIcon: suffixIcon,
-                        hintText: hint,
-                        hintStyle: const TextStyle(color: Colors.white70),
-                        border: InputBorder.none,
-                      ),
-                    ),
-=======
         Container(
           padding: const EdgeInsets.all(8),
           margin: const EdgeInsets.all(1.5),
@@ -242,11 +208,11 @@ class Util {
                   controller: controller,
                   keyboardType: inputType,
                   style: TextStyle(fontSize: fontSize, color: Colors.white70),
-                  decoration: InputDecoration.collapsed(
+                  decoration: InputDecoration(
+                    suffixIcon: suffixIcon,
                     hintText: hint,
                     hintStyle: const TextStyle(color: Colors.white70),
                     border: InputBorder.none,
->>>>>>> d5907878e8294d9eed4169e3cffa9f526a4fce89
                   ),
                   onTap: onPressed,
                 ),
