@@ -3,6 +3,7 @@ import 'package:digitalart/screens/authentication/sign_in.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
+import 'controllers/challenges_page_controller.dart';
 import 'controllers/profile_page_controller.dart';
 import 'navigator/navigator.dart';
 
@@ -10,6 +11,7 @@ void main() {
   runApp(DigitalArtNetwork());
 
   Get.put(ProfileController());
+  Get.put(ChallengesPageController());
 }
 
 class DigitalArtNetwork extends StatelessWidget {

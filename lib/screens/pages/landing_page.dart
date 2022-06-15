@@ -5,6 +5,7 @@ import '../../res/color_resource.dart';
 import 'home.dart';
 import 'details_page.dart';
 import 'profile/profile_page.dart';
+import 'challenges/challenges_page.dart';
 
 class LandingPage extends StatefulWidget {
   const LandingPage({Key? key}) : super(key: key);
@@ -24,7 +25,7 @@ class _LandingPageState extends State<LandingPage> {
     DigitalHomePage(),
     Container(),
     Container(),
-    Container(),
+    ChallengesPage(),
     UserProfilePage(),
   ];
 

@@ -1,5 +1,4 @@
 import 'package:digitalart/res/dimension.dart';
-import 'package:digitalart/screens/widgets/textview.dart';
 import 'package:flutter/material.dart';
 
 import 'color_resource.dart';
@@ -143,6 +142,7 @@ class Util {
     String? required = "*",
     String? label = "",
     IconData? icon,
+    Widget? suffixIcon,
     bool isIcon = false,
     double? size,
     double fontSize = 16,
@@ -153,6 +153,7 @@ class Util {
     bool buttonAvailable = false,
     int field = 0,
     int selectedField = 20,
+    double padding = 16,
     int maxLine = 1,
     Color borderColor = Colors.grey,
     Function()? onPressed,
@@ -184,7 +185,7 @@ class Util {
         InkWell(
           onTap: onPressed,
           child: Container(
-            padding: const EdgeInsets.all(16),
+            padding: EdgeInsets.all(padding),
             decoration: BoxDecoration(
               border: Border.all(
                   width: 1,
@@ -206,7 +207,8 @@ class Util {
                       keyboardType: inputType,
                       style:
                           TextStyle(fontSize: fontSize, color: Colors.white70),
-                      decoration: InputDecoration.collapsed(
+                      decoration: InputDecoration(
+                        suffixIcon: suffixIcon,
                         hintText: hint,
                         hintStyle: const TextStyle(color: Colors.white70),
                         border: InputBorder.none,

@@ -37,15 +37,15 @@ class NotificationPage extends StatelessWidget {
           child: DropdownView(
               borderColor: ColorResource.lightDivider,
               borderRadius: 6,
+              filled: false,
               fillColor: ColorResource.cardColor,
               isDense: true,
-              prefixIcon: Container(),
               value: controller.idEmailNotifyValue.value,
               items: controller.idEmailNotifyItems
                   .map<DropdownMenuItem<String>>((String value) {
                 return DropdownMenuItem<String>(
                   value: value,
-                  child: Text(value),
+                  child: CustomText(color: Colors.white54, text: value),
                 );
               }).toList(),
               validator: null,

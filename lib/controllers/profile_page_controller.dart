@@ -7,7 +7,7 @@ class ProfileController extends GetxController {
   var selectedFollowersTabIndex = 0.obs;
 
   var toogleOnlineStatus = false.obs;
-  var idEmailNotifyValue = ''.obs;
+  var idEmailNotifyValue = 'Real time'.obs;
   var pageViewController = PageController(
     initialPage: 0,
   ).obs;
